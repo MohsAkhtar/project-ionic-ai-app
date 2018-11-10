@@ -2,4 +2,18 @@
   <ion-navbar> <ion-title> Ionic AI </ion-title> </ion-navbar>
 </ion-header>
 
-<ion-content padding> </ion-content>
+<ion-content padding>
+  <ion-fab bottom right>
+    <button ion-fab color="danger"><ion-icon name="mic"></ion-icon></button>
+  </ion-fab>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-item>
+      <ion-input type="text" placeholder="Enter your message here"></ion-input>
+      <button ion-button icon-only item-right clear>
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>
