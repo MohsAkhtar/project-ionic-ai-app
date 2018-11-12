@@ -24,15 +24,10 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
 
-      window['ApiAIPlugin'].init(
-        {
-          clientAccessToken: 'c47fbc4acb694092adbf224feb85b466', // insert your client access key here
-          lang: 'en' // set lang tag from list of supported languages
-        },
-        function(error) {
-          alert(error);
-        }
-      );
+      window['ApiAIPlugin'].init({
+        clientAccessToken: 'c47fbc4acb694092adbf224feb85b466', // insert your client access key here
+        lang: 'en' // set lang tag from list of supported languages
+      });
     });
   }
 }
