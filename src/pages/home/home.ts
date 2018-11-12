@@ -9,26 +9,34 @@ declare var window;
 })
 export class HomePage {
   messages: any[] = [];
+  inputText: string = '';
 
   constructor(public navCtrl: NavController) {
     this.messages.push({
       text: 'Hi, how can I help you?',
       sender: 'api'
     });
-
-    this.messages.push({
-      text: 'Hello',
-      sender: 'me'
-    });
   }
 
   sendText() {
+    let message = this.inputText;
+
+    this.messages.push({
+      text: message,
+      sender: 'me'
+    });
+
+    this.inputText = '';
+
     window['ApiAIPlugin'].requestText(
       {
-        query: 'Hello'
+        query: message
       },
       response => {
-        alert(JSON.stringify(response));
+        this.messages.push({
+          text: response.result.fullfilment.speech,
+          sender: 'ai'
+        });
       },
       error => {
         alert(JSON.stringify(error));
