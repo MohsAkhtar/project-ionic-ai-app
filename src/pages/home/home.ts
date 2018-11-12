@@ -1,5 +1,5 @@
-import { Component, NgZone } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, NgZone, ViewChild } from '@angular/core';
+import { NavController, Content } from 'ionic-angular';
 
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 
@@ -12,6 +12,7 @@ declare var window;
 export class HomePage {
   messages: any[] = [];
   inputText: string = '';
+  @ViewChild(Content) content: Content;
 
   constructor(
     public navCtrl: NavController,
@@ -31,6 +32,8 @@ export class HomePage {
       text: message,
       sender: 'me'
     });
+    // auto scroll to bottom after message sent (200ms)
+    this.content.scrollToBottom(200);
 
     this.inputText = '';
 
@@ -45,6 +48,7 @@ export class HomePage {
             sender: 'api'
           });
         });
+        this.content.scrollToBottom(200);
       },
       error => {
         alert(JSON.stringify(error));
