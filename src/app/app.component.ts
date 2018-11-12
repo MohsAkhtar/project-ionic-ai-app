@@ -29,9 +29,6 @@ export class MyApp {
           clientAccessToken: 'c47fbc4acb694092adbf224feb85b466', // insert your client access key here
           lang: 'en' // set lang tag from list of supported languages
         },
-        function(result) {
-          alert(result);
-        },
         function(error) {
           alert(error);
         }

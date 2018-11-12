@@ -10,7 +10,7 @@
   </ion-fab>
 
   <ion-list no-lines class="chat-list">
-    <ion-item *ngFor="let message of messages" class="chat-item">
+    <ion-item *ngFor="let message of messages" class="chat-item" text-wrap>
       <ion-avatar item-left *ngIf="message.sender == 'api'">
         <img src="assets/apiai.png" />
       </ion-avatar>
