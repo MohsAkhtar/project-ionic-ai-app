@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+declare var window;
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -18,5 +20,19 @@ export class HomePage {
       text: 'Hello',
       sender: 'me'
     });
+  }
+
+  sendText() {
+    window['ApiAIPlugin'].requestText(
+      {
+        query: 'Hello'
+      },
+      response => {
+        alert(JSON.stringify(response));
+      },
+      error => {
+        alert(JSON.stringify(error));
+      }
+    );
   }
 }

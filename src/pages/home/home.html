@@ -28,7 +28,8 @@
   <ion-toolbar>
     <ion-item>
       <ion-input type="text" placeholder="Enter your message here"></ion-input>
-      <button ion-button icon-only item-right clear>
+
+      <button ion-button icon-only item-right clear (click)="sendText()">
         <ion-icon name="send"></ion-icon>
       </button>
     </ion-item>
