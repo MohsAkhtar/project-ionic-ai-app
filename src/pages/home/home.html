@@ -4,7 +4,9 @@
 
 <ion-content padding>
   <ion-fab bottom right>
-    <button ion-fab color="danger"><ion-icon name="mic"></ion-icon></button>
+    <button ion-fab color="danger" (click)="sendVoice()">
+      <ion-icon name="mic"></ion-icon>
+    </button>
   </ion-fab>
 
   <ion-list no-lines class="chat-list">
