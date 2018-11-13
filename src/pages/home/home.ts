@@ -65,6 +65,13 @@ export class HomePage {
           locale: 'en-UK',
           rate: 1
         });
+        this.ngZone.run(() => {
+          this.messages.push({
+            text: response.result.fulfillment.speech,
+            sender: 'api'
+          });
+        });
+        this.content.scrollToBottom(200);
       },
       error => {
         alert(error);
